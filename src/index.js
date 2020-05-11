@@ -27,7 +27,12 @@ const store = createStore(
   rootReducer,
   compose(
     applyMiddleware(thunk.withExtraArgument({ getFirestore, getFirebase })),
-    reduxFirestore(firebase, fbConfig)
+    reduxFirestore(firebase, fbConfig, {
+      userProfile: "users",
+      useFirestoreForProfile: true,
+      enableRedirectHandling: false,
+      resetBeforeLogin: false,
+    })
   )
 );
 
@@ -39,6 +44,7 @@ const rrfConfig = {
 const rrfProps = {
   firebase,
   config: rrfConfig,
+
   dispatch: store.dispatch,
   createFirestoreInstance,
   presence: "presence", // where list of online users is stored in database
