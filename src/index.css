@@ -12,10 +12,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  background: url("./media/mario-bg.png") no-repeat;
-  background-size: 100%;
-  background-position: bottom;
-  background-color: #95e8f3;
+  background-color: #a3a3a3;
 }
 form {
   padding: 20px;
